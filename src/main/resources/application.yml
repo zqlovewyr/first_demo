@@ -1,0 +1,26 @@
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://203.195.204.142:3306/first_demo
+    username: root
+    password: 1qaz@WSX
+    # 初始化大小，最小，最大
+    initialSize: 1
+    minIdle: 3
+    maxActive: 20
+    # 配置获取连接等待超时的时间
+    maxWait: 60000
+    filters: stat,wall,slf4j
+
+
+#mybatis
+mybatis:
+  type-aliases-package: com.qy.first_demo.entity
+  mapper-locations: classpath*:mybatismapper/**/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+
+
+server:
+  port: 8070
